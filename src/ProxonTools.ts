@@ -81,7 +81,8 @@ export class ProxonTools {
   }
 
   /**
-   *
+   * Transforms supplied value to Modbus format.
+   * 
    * @param register Single Proxon.Register with configuration data filled
    * @param value Value in external representation
    * @returns Value in internal representation
@@ -97,7 +98,8 @@ export class ProxonTools {
   }
 
   /**
-   *
+   * Transforms Modbus Register reading to the internal result structure.
+   * 
    * @param data
    * @returns
    */

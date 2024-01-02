@@ -725,5 +725,8 @@
     { "type":2, "register": 647, "description": "Temperatur Nebenbedienteil 19", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 10, "unit": "°C" },
     { "type":2, "register": 648, "description": "PTC NBE/HNBE/HBDE Fehler 1", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 1, "unit": " " },
     { "type":2, "register": 649, "description": "PTC NBE/HNBE/HBDE Fehler 2", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 1, "unit": " " },
-    { "type":2, "register": 650, "description": "PTC modul 1 und 2 Fehler", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 1, "unit": " " }
+    { "type":2, "register": 650, "description": "PTC modul 1 und 2 Fehler", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 1, "unit": " " },
+    { "type":3, "register": 1, "description": "Haupt Nebenbedienteil", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
+      "options": { "offset": { "type":1, "register": 213 }, "middle": { "type":1, "register": 233 } } }
+
 ]

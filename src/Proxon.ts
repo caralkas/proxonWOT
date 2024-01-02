@@ -1,10 +1,7 @@
-import { MultipleThings, Property, Thing, Value, WebThingServer } from "webthing";
+import { MultipleThings, Thing, WebThingServer } from "webthing";
 import { ProxonNS, ProxonTools } from "./ProxonTools";
 import { ThingBuilder } from "./ThingBuilder";
 import { Queue } from "./Queue";
-import { config } from "process";
-import GetDataModbus from "./GetDataModbus";
-
 import { ProxonProxy } from "./ProxonProxy";
 
 export class Proxon {
@@ -20,7 +17,7 @@ export class Proxon {
     this.port = port ? port : 8888;
     this.server = null;
     this.queue = new Queue();
-    this.proxonProxy = new ProxonProxy();
+    this.proxonProxy = new ProxonProxy(this.queue);
   }
 
   /**
