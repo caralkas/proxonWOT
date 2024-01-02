@@ -1,0 +1,29 @@
+{
+  "name": "proxon-wot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tsc",
+    "start": "node ./out/main.js",
+    "watch": "npx nodemon --inspect ./src/main.ts",
+    "debug": "npx nodemon --inspect-brk src/main.ts",
+    "debug-stand-alone": "node --inspect-brk ./out/dummy.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "modbus-serial": "^8.0.16",
+    "webthing": "^0.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "nodemon": "^3.0.2",
+    "rimraf": "^5.0.5",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.3.3"
+  }
+}

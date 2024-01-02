@@ -1,0 +1,45 @@
+[
+    {
+        "id":"ventilation",
+        "description": "Lüftung",
+        "registers":[
+            { "device": "proxon", "type": 1, "register": 0, "description": "Maximal Drehzahl Ventilator (Fehler)" },
+            { "device": "proxon", "type": 1, "register": 1, "description": "Ventilator Fehler zeitverzögerung in betrieb" },
+            { "device": "proxon", "type": 1, "register": 2, "description": "Zuluft Einstellung Stufe 1" },
+            { "device": "proxon", "type": 1, "register": 3, "description": "Zuluft Einstellung Stufe 2" },
+            { "device": "proxon", "type": 1, "register": 4, "description": "Zuluft Einstellung Stufe 3" },
+            { "device": "proxon", "type": 1, "register": 5, "description": "Zuluft Einstellung Stufe 4" },
+            { "device": "proxon", "type": 1, "register": 6, "description": "Abluft Einstellung Stufe 1" },
+            { "device": "proxon", "type": 1, "register": 7, "description": "Abluft Einstellung Stufe 2" },
+            { "device": "proxon", "type": 1, "register": 8, "description": "Abluft Einstellung Stufe 3" },
+            { "device": "proxon", "type": 1, "register": 9, "description": "Abluft Einstellung Stufe 4" },
+            { "device": "proxon", "type": 1, "register": 10, "description": "Mindest Drehzahl Ventilator (Fehler)" },
+            { "device": "proxon", "type": 1, "register": 11, "description": "Ventilator Minimum Luftmenge" },
+            { "device": "proxon", "type": 1, "register": 12, "description": "Ventilator Maximum Luftmenge" },
+            { "device": "proxon", "type": 1, "register": 104, "description": "Ventilator Fehler zeitverzögerung bei anlauf" },
+            { "device": "proxon", "type": 1, "register": 133, "description": "Intensivluftung" },
+            { "device": "proxon", "type": 1, "register": 189, "description": "Intensivlüftung Zeit E1/E2 input" },
+            { "device": "proxon", "type": 1, "register": 398, "description": "Air m3/h K faktor" }
+        ]
+    },
+    {
+        "id":"rooms",
+        "description":"Räume",
+        "registers":[    
+            { "device": "proxon", "type":1, "register": 75, "description": "Soll Temperatur Zone 2" },
+            { "device": "proxon", "type":1, "register": 70, "description": "Soll Temperatur Zone 1" }                
+
+        ]
+    },
+    {
+        "id":"technical",
+        "description":"Technische Informationen",
+        "registers":[
+            { "device": "proxon", "type":2, "register": 5, "description": "Firmware Version Haupptplatine  " },
+            { "device": "proxon", "type":2, "register": 8, "description": "Relais Status Hauptplatine" },
+            { "device": "proxon", "type":2, "register": 10, "description": "ES997Stufe" }
+            
+        ]
+    }
+
+]  
