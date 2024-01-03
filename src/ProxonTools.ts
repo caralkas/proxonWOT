@@ -6,11 +6,7 @@ export namespace ProxonNS {
     PROXON = "proxon",
     T300 = "t300",
   }
-  // export enum Params {
-  //   PROXON = "proxon",
-  //   T300 = "t300",
-  //   GROUPS = "groups",
-  // }
+
   export enum RegisterType {
     HOLDING = 1,
     INPUT = 2,
@@ -32,6 +28,12 @@ export namespace ProxonNS {
   }
   export interface Registers extends Array<Register> {}
 
+  export interface RegisterId{
+    device: ProxonNS.DeviceType,
+    type: ProxonNS.RegisterType,
+    register: number
+  }
+
   export interface Result {
     device: DeviceType;
     type: number;
@@ -41,9 +43,44 @@ export namespace ProxonNS {
     unit: string;
   }
   export interface Results extends Array<Result> {}
+
+  export interface Input {
+    register: Register;
+    value: number;
+  }
+  export interface Inputs extends Array<Input> {}
 }
 
 export class ProxonTools {
+  /**
+   * Translate RegisterId object to Register Id string.
+   * 
+   * @param regId RegisterId object
+   * @returns Register Id as string
+   */
+  public static convertRegToId(regId: ProxonNS.RegisterId):string{
+    return `${regId.device}-${regId.type}-${regId.register}`;
+  }
+  
+  /**
+   * Translate string Register Id to RegisterId object.
+   * 
+   * @param id Register Id as string
+   * @returns RegisterId object
+   */
+  public static convertIdToReg(id:string):ProxonNS.RegisterId{
+    const idParts = id.split("-");
+    try {
+      return {
+        device: idParts[0] as ProxonNS.DeviceType,
+        type: Number.parseInt(idParts[1]) as ProxonNS.RegisterType,
+        register: Number.parseInt(idParts[2])      
+      } as ProxonNS.RegisterId;      
+    } catch (error) {
+      throw new Error("convertIdToReg - Invalid Id");
+    }    
+  }
+
   /**
    * Read Proxon Register configuration from the supplied file.
    *
@@ -82,7 +119,7 @@ export class ProxonTools {
 
   /**
    * Transforms supplied value to Modbus format.
-   * 
+   *
    * @param register Single Proxon.Register with configuration data filled
    * @param value Value in external representation
    * @returns Value in internal representation
@@ -99,7 +136,7 @@ export class ProxonTools {
 
   /**
    * Transforms Modbus Register reading to the internal result structure.
-   * 
+   *
    * @param data
    * @returns
    */

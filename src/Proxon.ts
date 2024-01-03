@@ -6,6 +6,7 @@ import { ProxonProxy } from "./ProxonProxy";
 
 export class Proxon {
   private static updateInterval: number = 5000;
+  private static usbCon:string = "/dev/ttyUSB0";
   private server: WebThingServer | null;
   private port: number;
   private pathProxon: string = "./assets/proxon-registers.json";
@@ -13,11 +14,11 @@ export class Proxon {
   private queue:Queue;
   private proxonProxy: ProxonProxy;
 
-  constructor(port?: number) {
-    this.port = port ? port : 8888;
+  constructor(port: number=8888) {
+    this.port = port;
     this.server = null;
     this.queue = new Queue();
-    this.proxonProxy = new ProxonProxy(this.queue);
+    this.proxonProxy = new ProxonProxy(this.queue, Proxon.usbCon);
   }
 
   /**
@@ -67,7 +68,7 @@ export class Proxon {
         ProxonNS.DeviceType.T300,
         "Proxon T300",
         this.proxonProxy.getConfig(ProxonNS.DeviceType.T300),
-        this.proxonProxy.handleValueChange.bind(this),
+        this.proxonProxy.handleValueChange,
         this.proxonProxy.getRegMatcher()
       );
       mulThings.push(thing);
@@ -101,8 +102,7 @@ export class Proxon {
    * Polls data from Modbus in the interval defined by Proxon.updateInterval.
    * 
    */
-  public startModbusPolling(){
-    const that = this;    
+  public startModbusPolling(){ 
     this.queue.enqueue(()=>new Promise(
       async (resolve,reject)=>{   
         //Process the Updated

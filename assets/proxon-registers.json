@@ -132,7 +132,7 @@
     { "type":1, "register": 132, "description": "CO2 simuliert", "write": false, "data": "uint16", "min": 0, "max": 32000, "scaling": 1, "unit": "ppm" },
     { "type":1, "register": 133, "description": "Intensivluftung", "write": true, "data": "uint16", "min": 0, "max": 1440, "scaling": 1, "unit": "Minuten" },
     { "type":1, "register": 134, "description": "Wärmepumpe ausschalt schwelle", "write": false, "data": "int16", "min": 0, "max": 300, "scaling": 100, "unit": "°C" },
-    { "type":1, "register": 187, "description": "ZBP PTC freigeben", "write": false, "data": "uint16", "min": 0, "max": 1, "scaling": 1, "unit": " " },
+    { "type":1, "register": 187, "description": "ZBP PTC freigeben", "write": true, "data": "uint16", "min": 0, "max": 1, "scaling": 1, "unit": " " },
     { "type":1, "register": 189, "description": "Intensivlüftung Zeit E1/E2 input", "write": false, "data": "uint16", "min": 0, "max": 1440, "scaling": 1, "unit": "Minuten" },
     { "type":1, "register": 190, "description": "HNBP measured temp offset  ", "write": false, "data": "int16", "min": -100, "max": 100, "scaling": 10, "unit": "°C" },
     { "type":1, "register": 191, "description": "PTC measured temp offset NBP1", "write": false, "data": "int16", "min": -100, "max": 100, "scaling": 10, "unit": "°C" },
@@ -726,7 +726,8 @@
     { "type":2, "register": 648, "description": "PTC NBE/HNBE/HBDE Fehler 1", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 1, "unit": " " },
     { "type":2, "register": 649, "description": "PTC NBE/HNBE/HBDE Fehler 2", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 1, "unit": " " },
     { "type":2, "register": 650, "description": "PTC modul 1 und 2 Fehler", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 1, "unit": " " },
-    { "type":3, "register": 1, "description": "Haupt Nebenbedienteil", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
-      "options": { "offset": { "type":1, "register": 213 }, "middle": { "type":1, "register": 233 } } }
-
+    { "type":3, "register": 1, "description": "Soll Temperatur Haupt Nebenbedienteil", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
+      "options": { "offset": { "type":1, "register": 213 }, "middle": { "type":1, "register": 233 } } },
+    { "type":3, "register": 3, "description": "Soll Temperatur Nebenbedienteil 2", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
+      "options": { "offset": { "type":1, "register": 215 }, "middle": { "type":1, "register": 235 } } }
 ]
