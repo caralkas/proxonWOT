@@ -7,8 +7,8 @@ const Store: any={
 }
 
 export interface IRegisterProvider{
-    readRegister( register: ProxonNS.Register):Promise<number>;
-    writeRegister( register: ProxonNS.Register, value: number):Promise<void>;
+    getRegisterValue( register: ProxonNS.Register):number;
+    getInputRegisters( register: ProxonNS.Register, value: number):ProxonNS.Inputs;
 }
 
 export class RegisterProvider{
