@@ -61,13 +61,4 @@ Finally start the server and persist the current PM2 task list.
 
 #### What port is used
 The port is: **8888**
-
-## Installation
-
-Install my-project with npm
-
-```bash
-  npm install my-project
-  cd my-project
-```
     
