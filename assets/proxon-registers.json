@@ -728,6 +728,14 @@
     { "type":2, "register": 650, "description": "PTC modul 1 und 2 Fehler", "write": false, "data": "int16", "min": 0, "max": 0, "scaling": 1, "unit": " " },
     { "type":3, "register": 1, "description": "Soll Temperatur Haupt Nebenbedienteil", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
       "options": { "offset": { "type":1, "register": 213 }, "middle": { "type":1, "register": 233 } } },
+    { "type":3, "register": 2, "description": "Soll Temperatur Nebenbedienteil 1", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
+    "options": { "offset": { "type":1, "register": 214 }, "middle": { "type":1, "register": 234 } } },
     { "type":3, "register": 3, "description": "Soll Temperatur Nebenbedienteil 2", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
-      "options": { "offset": { "type":1, "register": 215 }, "middle": { "type":1, "register": 235 } } }
+    "options": { "offset": { "type":1, "register": 215 }, "middle": { "type":1, "register": 235 } } },
+    { "type":3, "register": 4, "description": "Soll Temperatur Nebenbedienteil 3", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
+    "options": { "offset": { "type":1, "register": 216 }, "middle": { "type":1, "register": 236 } } },
+    { "type":3, "register": 5, "description": "Soll Temperatur Nebenbedienteil 4", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
+    "options": { "offset": { "type":1, "register": 217 }, "middle": { "type":1, "register": 237 } } },
+    { "type":3, "register": 6, "description": "Soll Temperatur Nebenbedienteil 5", "write": true, "data": "uint16", "min": -3, "max": 53, "scaling": 1, "unit": "°C", "class": "TempPanelRegister", 
+    "options": { "offset": { "type":1, "register": 218 }, "middle": { "type":1, "register": 238 } } }
 ]
